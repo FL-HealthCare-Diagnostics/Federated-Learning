@@ -13,6 +13,19 @@ The proposed framework primarily uses the **Federated Proximal (FedProx)** algor
 
 The project will evaluate the resulting federated model against centralized and single-institution learning baselines to study its diagnostic performance, robustness, and generalizability while preserving patient data privacy.
 
+
+Rewritten abstract
+
+Accurate healthcare diagnostic models require large, diverse, and representative datasets, yet patient data remain distributed across institutions because of privacy, regulatory, and governance constraints. Federated learning (FL) enables collaborative model development without transferring raw patient data, but current healthcare FL studies often rely on simulated client partitions, single-modality datasets, limited privacy threat models, and internal performance evaluation. Consequently, it remains unclear whether FL can provide reliable diagnostic generalization across genuinely heterogeneous institutions while maintaining acceptable privacy, fairness, calibration, and deployment efficiency.
+
+This project proposes and evaluates a privacy-preserving, heterogeneity-aware federated diagnostic framework based on Federated Proximal (FedProx) optimization. Each participating institution trains locally on its available medical images, clinical text, and structured records, while only protected model updates are transmitted for global aggregation. The proximal regularization term constrains local optimization relative to the global model and is designed to improve stability under non-identically distributed data arising from differences in disease prevalence, patient demographics, acquisition protocols, clinical workflows, and data quality. Secure aggregation and an explicit privacy-threat evaluation will be used to assess whether protection extends beyond the absence of raw-data exchange.
+
+The framework will be evaluated against single-institution learning, conventional FedAvg, centralized learning where permissible, and personalized or other heterogeneity-aware federated baselines. Experiments will use controlled non-IID partitions and, where available, institutionally distinct or external test cohorts. Evaluation will extend beyond aggregate accuracy to include AUROC, AUPRC, sensitivity at clinically relevant specificity, calibration, subgroup fairness, worst-site performance, unseen-site generalization, communication cost, convergence, client dropout robustness, and resistance to membership or model-update inference. Ablation studies will examine the contribution of the proximal term, secure aggregation, privacy protection, modality fusion, and personalization.
+
+The study aims to determine the conditions under which FedProx improves the reliability and generalizability of collaborative healthcare diagnosis without imposing unacceptable privacy, computational, communication, or fairness costs. Rather than treating federated learning itself as the novelty, the project will provide an experimentally grounded assessment of its clinical and operational value under realistic multi-institutional heterogeneity.
+
+
+
 ---
 
 # 2. Project Objectives
